@@ -42,8 +42,8 @@ exports.SINGLE_ESTIMATE = (userId, estimateId) =>
  * - column names match the estimate the are in the table
  * - `?` allow us to use params in our controllers
  */
-exports.INSERT_ESTIMATE = (userId, jobNumber, pipeSize, totalNumHoles) =>
-  `INSERT INTO estimates (user_id, job_number, pipe_size, total_num_holes) VALUES (${userId}, ${jobNumber}, ${pipeSize}, ${totalNumHoles})`;
+exports.INSERT_ESTIMATE = (userId, jobNumber, pipeSize, totalNumHoles, totalSavings) =>
+  `INSERT INTO estimates (user_id, job_number, pipe_size, total_num_holes, total_savings) VALUES (${userId}, ${jobNumber}, ${pipeSize}, ${totalNumHoles}, ${totalSavings})`;
 
 /**
  * Update follows syntax:

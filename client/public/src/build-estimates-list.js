@@ -25,7 +25,7 @@ class Estimates {
       const res = await deleteEstimate(estimateId);
 
       if (res !== null) {
-        this.estimates = this.estimates.filter((estimate) => estiamte.estiamte_id !== estimateId);
+        this.estimates = this.estimates.filter((estimate) => estimate.estimate_id !== estimateId);
         const estimate = document.getElementById(`estimate-${estimateId}`);
         estimate.remove();
 
@@ -54,13 +54,13 @@ class Estimates {
    */
   buildEstimateListRowItem = (estimate) => {
     const listGroupItem = document.createElement('li');
-    listGroupItem.id = `estimate-${estiamte.estiamte_id}`; // estimate-1
+    listGroupItem.id = `estimate-${estimate.estimate_id}`; // estimate-1
     listGroupItem.className = 'list-group-item';
 
     const deleteBtn = document.createElement('button');
     const deleteBtnTxt = document.createTextNode('X');
     deleteBtn.className = 'btn btn-secondary';
-    deleteBtn.addEventListener('click', this._deleteEventHandler(estimate.estiamte_id));
+    deleteBtn.addEventListener('click', this._deleteEventHandler(estimate.estimate_id));
     deleteBtn.appendChild(deleteBtnTxt);
 
     const estimateJobNumberSpan = document.createElement('span');
@@ -75,11 +75,21 @@ class Estimates {
     const estimateTotalNumHoles = document.createTextNode(estimate.total_num_holes);
     estimateTotalNumHolesSpan.append(estimateTotalNumHoles);
 
+    var format = new Intl.NumberFormat('en-US', { 
+      style: 'currency', 
+      currency: 'USD' 
+    });
+
+    const estimateTotalSavingsSpan = document.createElement('span');
+    const estimateTotalSavings = document.createTextNode(format.format(estimate.total_savings));
+    estimateTotalSavingsSpan.append(estimateTotalSavings);
+
     // add list item's details
     listGroupItem.append(deleteBtn);
     listGroupItem.append(estimateJobNumberSpan);
     listGroupItem.append(estimatePipeSizeSpan);
     listGroupItem.append(estimateTotalNumHolesSpan);
+    listGroupItem.append(estimateTotalSavingsSpan);
 
     return listGroupItem;
   };
@@ -89,7 +99,7 @@ class Estimates {
    * Uses bootstrap classes with some custom overrides.
    */
   buildEstimatesList = (mount, estimates) =>
-    estimates.map((estiamte) => {
+    estimates.map((estimate) => {
       const listGroupRowItem = this.buildEstimateListRowItem(estimate);
 
       // add entire list item

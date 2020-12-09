@@ -32,7 +32,7 @@ const { serverError } = require('../utils/handlers');
   
     // [] === true, 0 === false
     if (!estiamtes.length) {
-      res.status(200).json({ msg: 'No estimates available for this user.' });
+      return res.status(200).json({ msg: 'No estimates available for this user.' });
     }
     res.json(estiamtes);
   };
@@ -81,14 +81,15 @@ exports.createEstimate = async (req, res) => {
       const jobNumber = mysql.escape(req.body.job_number);
       const pipeSize = mysql.escape(req.body.pipe_size);
       const totalNumHoles = mysql.escape(req.body.total_num_holes);
-      const result = await query(con, INSERT_ESTIMATE(user.id, jobNumber, pipeSize, totalNumHoles)).catch(
+      const totalSavings = mysql.escape(req.body.total_savings);
+      const result = await query(con, INSERT_ESTIMATE(user.id, jobNumber, pipeSize, totalNumHoles, totalSavings)).catch(
         serverError(res)
       );
   
       if (result.affectedRows !== 1) {
         res
           .status(500)
-          .json({ msg: `Unable to add estiamte: ${req.body.job_number} ${req.body.pipe_size} ${req.body.total_num_holes}` });
+          .json({ msg: `Unable to add estiamte: ${req.body.job_number} ${req.body.pipe_size} ${req.body.total_num_holes} ${req.body.total_savings}` });
       }
       res.json({msg: 'Added estimate successfully!' });
     }

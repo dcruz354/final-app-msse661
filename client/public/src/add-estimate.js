@@ -7,11 +7,20 @@ const doAddEstimate = async (e) => {
     const estimateInput = document.getElementById('formInputJobNumber');
     const job_number = estimateInput.value;
     const pipeSizeSelect = document.getElementById('formSelectPipeSize');
-    const options = pipeSizeSelect.options;
     const selectedIndex = pipeSizeSelect.selectedIndex;
-    const pipe_size = options[selectedIndex].text;
+    var pipe_size;
+    var total_savings;
     const estimateInput1 = document.getElementById('formInputTotalNumHoles');
     const total_num_holes = estimateInput1.value;
+    if(selectedIndex === 0)
+    {
+      pipe_size = 2;
+      total_savings = (4.60 * total_num_holes) - (4.50 * total_num_holes);
+    } else
+    {
+      pipe_size = 3;
+      total_savings = (9.40 * total_num_holes) - (6.50 * total_num_holes);
+    }
   
     if (!job_number) {
       alert('Please enter a job number.');
@@ -21,11 +30,11 @@ const doAddEstimate = async (e) => {
         alert('Please enter number of holes.');
         return;
       }
-  
-    const res = await doAddEstimate({ job_number, pipe_size, total_num_holes });
+      console.log(total_savings);
+    const res = await addEstimate({ job_number, pipe_size, total_num_holes, total_savings});
   
     if (res !== null) {
-      inst.generateEstimate();
+      inst.generateEstimates();
     }
     estimateInput.value = '';
     estimateInput1.value = '';
