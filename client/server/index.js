@@ -12,7 +12,9 @@ app.listen(httpPort, () => {
   console.log('Server started at http://localhost:%s', httpPort);
 });
 
-https
+
+
+/* https
   .createServer(
     {
       key: fs.readFileSync(__dirname + '/server.key'),
@@ -22,4 +24,4 @@ https
   )
   .listen(httpsPort, () => {
     console.log('Server started at https://localhost:%s', httpsPort);
-  });
+  }); */
