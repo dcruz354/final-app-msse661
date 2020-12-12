@@ -30,7 +30,6 @@ const doAddEstimate = async (e) => {
         alert('Please enter number of holes.');
         return;
       }
-      console.log(total_savings);
     const res = await addEstimate({ job_number, pipe_size, total_num_holes, total_savings});
   
     if (res !== null) {

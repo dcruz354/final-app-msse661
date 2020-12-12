@@ -32,7 +32,7 @@ brew install mysql
 3. Give access right to `root@localhost`.
 
 ```bash
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'pass123'; FLUSH PRIVILEGES;"
+mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 ```
 
 **NOTE: once configured, move onto the next steps.**

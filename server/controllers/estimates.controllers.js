@@ -133,7 +133,7 @@ exports.updateEstimate = async (req, res) => {
   
     const values = _buildValuesString(req);
   
-    // query update order
+    // query update estimate
     const result = await query(
       con,
       UPDATE_ESTIMATE(req.user.id, req.params.estimateId, values)
@@ -154,7 +154,7 @@ exports.deleteEstimate = async (req, res) => {
       throw err;
     });
   
-    // query estimate order
+    // query estimate estimate
     const result = await query(
       con, 
       DELETE_ESTIMATE(req.user.id, req.params.estimateId)
