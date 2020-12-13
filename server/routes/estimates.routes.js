@@ -24,7 +24,7 @@ estimatesRoutes.get('/', canAccess, getAllEstimates).post('/', canAccess, create
  * Routes for estimates by estimate id. Evalutes to `/estimates/:estimate_id`.
  */
 estimatesRoutes
-  .get('/:estimateId', canAccess, getEstimate) // GET http://locahost:3000/estimates/1
+  .get('/:estimateId', canAccess, getEstimate) // GET http://locahost:3001/estimates/1
   .put('/:estimateId', canAccess, updateEstimate)
   .delete('/:estimateId', canAccess, deleteEstimate);
 

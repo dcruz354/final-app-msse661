@@ -15,7 +15,7 @@ describe('Auth API service', () => {
     const expected = { msg: 'New user created!' };
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .post('/api/auth/register')
       .send(testUser)
       .end((err, resp) => {
@@ -34,7 +34,7 @@ describe('Auth API service', () => {
     const expected = { msg: 'User already exists!' };
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .post('/api/auth/register')
       .send(testUser)
       .end((err, resp) => {
@@ -52,7 +52,7 @@ describe('Auth API service', () => {
     };
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .post('/api/auth/login')
       .send(testUser)
       .end((err, resp) => {

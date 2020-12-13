@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    height: 12rem;
+}
+
+.navbar-style
+{
+    box-shadow: 0 5px 10px #efefef;
+}
+
+.icon-bar
+{
+    background: darkorange;
+}
+
+li a
+{
+    color: #333;
+}
+
+.big-text
+{
+    font-size: 52px;
+    margin: 20px 0;
+    color: navy;   
+}
+
+.banner-info
+{
+    margin: 30px 0;
+}

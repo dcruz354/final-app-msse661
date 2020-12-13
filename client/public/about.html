@@ -1,5 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>About</title>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar navbar-style">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="micon">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="nav-link" href="/">DIMA's Savings Calculator</a>
+                </div>
+                <div class="collapse navbar-collapse" id="micon">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a id="login" href="/login.html">Sign In</a></li>
+                        <li><a id="logout" href="" onclick="doLogout(event)">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="center">
+                <h2>What is DIMA?</h2>
+                <p>DIMA is a placeholder identification product for construction conduit that replaces current products with time and money saved on installation and with the same integrity. Currently, there is not a form to show customers how much time and money they are saving if they switch from current products to DIMA.</p>
+                <h2>DIMAS's Savings Calculator</h2>
+                <p>DIMA's Savings Calculator, calculates the amount the customer saves by using the new placeholder. The user enters the job number, the pipe size, and the total number of holes per job. The calculator will display the difference between the money spent on current practices with the money that is spent on the new placeholder.</p>
+                <h2>Try it out. Register and Sign in.</h2>
+              </div>
+        </div>
+
+        <footer>
+            <div class="author">
+              <p>Author: <a href="https://github.com/dcruz354">David Cruz</a></p>
+            </div>
+          </footer>
+          <script src="./src/api.config.js"></script>
+          <script src="./src/simple-storage.js"></script>
+          <script src="./src/service-helpers.js"></script>
+          <script src="./src/auth.service.js"></script>
+          <script src="./src/auth.js"></script>
+    </body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,4 +113,4 @@
     <script src="./src/auth.service.js"></script>
     <script src="./src/auth.js"></script>
   </body>
-</html>
+</html> -->

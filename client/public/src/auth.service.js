@@ -1,4 +1,4 @@
-const AUTH_API = `${BASE_API_URL}/auth`; // http://localhost:3000/api/auth
+const AUTH_API = `${BASE_API_URL}/auth`; // http://localhost:3001/api/auth
 
 /**
  * @class AuthService
