@@ -67,7 +67,7 @@ const doLogout = (e) => {
     logout.style.display = 'none';
   }
 
-  if (authService.isAuth()) {
+/*   if (authService.isAuth()) {
     try {
       await userService.getMe().then(([user]) => {
         const usernameText = document.createTextNode(user.username);
@@ -77,5 +77,5 @@ const doLogout = (e) => {
       console.log(err);
       alert('Could not get the current user.');
     }
-  }
+  } */
 })();

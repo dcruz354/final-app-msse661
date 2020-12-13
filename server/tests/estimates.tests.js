@@ -21,7 +21,7 @@ describe('Estimates API Service', function () {
     const expected = { msg: 'No estimates available for this user.' }
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .get('/api/estimates')
       .set('Authorization', `Bearer ${token}`)
       .end(function (err, resp) {
@@ -41,7 +41,7 @@ describe('Estimates API Service', function () {
     const expected = { msg: 'Added estimate successfully!' };
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .post('/api/estimates')
       .set('Authorization', `Bearer ${token}`)
       .send(newEstimate)
@@ -54,7 +54,7 @@ describe('Estimates API Service', function () {
   
   it.skip('should GET all estimates', function (done) {
       chai
-        .request('http://localhost:3000')
+        .request('http://localhost:3001')
         .get('/api/estimates')
         .set('Authorization', `Bearer ${token}`)
         .end(function (err, resp) {
@@ -78,7 +78,7 @@ describe('Estimates API Service', function () {
       ];
   
       chai
-        .request('http://localhost:3000')
+        .request('http://localhost:3001')
         .get('/api/estimates/1')
         .set('Authorization', `Bearer ${token}`)
         .end(function (err, resp) {

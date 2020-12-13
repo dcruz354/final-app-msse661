@@ -27,7 +27,7 @@ describe('User API service', () => {
       ];
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .get('/api/user/me')
       .set('Authorization', `Bearer ${token}`)
       .end((err, resp) => {
@@ -46,7 +46,7 @@ describe('User API service', () => {
     const expected = { msg: 'Updated succesfully!' };
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .put('/api/user/me/update')
       .set('Authorization', `Bearer ${token}`)
       .send(updatedUser)
@@ -65,7 +65,7 @@ describe('User API service', () => {
     const expected = { msg: 'Nothing to update...' };
 
     chai
-      .request('http://localhost:3000')
+      .request('http://localhost:3001')
       .put('/api/user/me/update')
       .set('Authorization', `Bearer ${token}`)
       .send(updatedUser)

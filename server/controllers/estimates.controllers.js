@@ -18,7 +18,7 @@ const { serverError } = require('../utils/handlers');
  * DELETE - Delete
  */
 
- // http://localhost:3000/estimates
+ // http://localhost:3001/estimates
  exports.getAllEstimates = async (req, res) => {
     // establish connection
     const con = await connection().catch((err) => {
@@ -37,7 +37,7 @@ const { serverError } = require('../utils/handlers');
     res.json(estiamtes);
   };
 
-// http://localhost:3000/estimates/1
+// http://localhost:3001/estimates/1
 exports.getEstimate = async (req, res) => {
     // establish connection
     const con = await connection().catch((err) => {
@@ -55,7 +55,7 @@ exports.getEstimate = async (req, res) => {
     res.json(estimate);
 };
 
-// http://localhost:3000/estimates
+// http://localhost:3001/estimates
 /**
  * POST request -
  * {
@@ -115,7 +115,7 @@ const _buildValuesString = (req) => {
     return values;
   };
 
-// http://localhost:3000/estimates/1
+// http://localhost:3001/estimates/1
 /**
  * PUT request -
  * {
@@ -147,7 +147,7 @@ exports.updateEstimate = async (req, res) => {
     res.json(result);
   };
 
-  // http://localhost:3000/estimate/1
+  // http://localhost:3001/estimate/1
 exports.deleteEstimate = async (req, res) => {
     // establish connection
     const con = await connection().catch((err) => {
